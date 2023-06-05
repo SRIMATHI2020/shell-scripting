@@ -12,6 +12,7 @@ Ensure you maintain good & desc readme.md file to facilitate others
 ## Github is a remote ctrl version
 
 ## common Git commands
+
 ....
 $ git clone repo.URL.git                     ; clones or dowmload the repo from github
 $ git addfilename or git add                 ; git will start tracking allchanges that you made
@@ -24,6 +25,7 @@ $ git pull                                   ; pull all the changes from github
 
 ## PAT
 
+## shbang notation 
 
 
 
