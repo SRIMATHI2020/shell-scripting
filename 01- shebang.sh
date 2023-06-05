@@ -5,4 +5,4 @@
 
 
 
-type java : /bin/java
+echo welcome to cloud devops training
