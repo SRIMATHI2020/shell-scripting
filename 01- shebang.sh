@@ -6,3 +6,4 @@
 
 
 echo welcome to cloud devops training
+
