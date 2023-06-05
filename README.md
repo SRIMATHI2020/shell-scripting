@@ -18,3 +18,15 @@ $ git addfilename or git add                 ; git will start tracking allchange
 $ git commit - m " brief message of changes" ; push the chage that are committed
 $ git push                                   ; pushes the made changes to github
 $ git pull                                   ; pull all the changes from github
+....
+
+## How to authenticate 
+
+## PAT
+
+
+
+
+
+PS :PAT is sensitive
+
