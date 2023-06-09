@@ -16,16 +16,14 @@ else
     echo -e "\e[32m failure \e[0m"
 fi
 
+echo -n "Downloading frontend component :"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m success \e[0m"
+else
+    echo -e "\e[32m failure \e[0m"
+fi
 
-
-To Install Nginx.
-
-# yum install nginx -y
-# systemctl enable nginx 
-# systemctl start nginx 
-Let's download the HTDOCS content and deploy under the Nginx path.
-
-# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 Deploy in Nginx Default Location.
 
 # cd /usr/share/nginx/html
