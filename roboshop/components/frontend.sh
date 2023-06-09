@@ -19,6 +19,8 @@ else
 fi   
 }
 
+echo -e *************"\e[32m $COMPONENT Installation is started \e[0m"*************
+
 echo -n "Installing Nginx :"
 yum install nginx -y &>> $LOGFILE
 stat $?
@@ -46,5 +48,4 @@ systemctl enable nginx
 systemctl start nginx
 stat $?
 
-
-##Finally restart the service once to effect the changes.
+echo -e ***********"\e[32m $COMPONENT Installation is completed \e[0m"***********
