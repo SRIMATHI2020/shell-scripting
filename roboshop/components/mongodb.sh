@@ -47,6 +47,6 @@ stat $?
 
 echo -n "Injecting the $COMPONENT schema: "
 cd $COMPONENT-main
-mongo < catalogue.js
-mongo < users.js 
+mongo < catalogue.js &>> $LOGFILE
+mongo < users.js     &>> $LOGFILE
 stat $?
