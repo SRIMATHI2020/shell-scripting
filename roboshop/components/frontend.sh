@@ -1,6 +1,6 @@
 #!/bin/bash
 ID=$(id -u)
-if [ $id -ne 0 ] ; then
+if [ $ID -ne 0 ] ; then
     echo "This script is xpectd to be run by oot user or with sudo previlage"
     exit -1
 fi
