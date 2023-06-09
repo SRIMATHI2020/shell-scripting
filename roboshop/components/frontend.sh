@@ -8,7 +8,7 @@ if [ $ID -ne 0 ] ; then
 fi
 
 
-echo "Installing Nginx :"
+echo -n "Installing Nginx :"
 yum install nginx -y &>> "/tmp/frontend.log"
 if [ $? -eq 0 ] ; then
     echo -e "\e[32m success \e[0m"
@@ -24,11 +24,16 @@ else
     echo -e "\e[32m failure \e[0m"
 fi
 
-Deploy in Nginx Default Location.
+echo -n "Performing clean-up: "
+cd /usr/share/nginx/html
+rm -rf * "/tmp/${component}.log"
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m success \e[0m"
+else
+    echo -e "\e[32m failure \e[0m"
+fi
 
-# cd /usr/share/nginx/html
-# rm -rf * 
-# unzip /tmp/frontend.zip
+#unzip /tmp/frontend.zip
 # mv frontend-main/* .
 # mv static/* .
 # rm -rf frontend-master README.md
