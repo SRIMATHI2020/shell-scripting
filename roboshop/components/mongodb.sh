@@ -22,6 +22,13 @@ echo -n "Configuring the $COMPONENT repo: "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat $?
 
+echo -n "Installing $COMPONENT :"
+yum install -y mongodb-org &>> $LOGFILE
+stat $?
+
+
+
+
 ##Setup MongoDB repos.
 ##echo '[mongodb-org-4.2]
 ##name=MongoDB Repository
@@ -30,7 +37,6 @@ stat $?
 ##enabled=1
 ##gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mongodb.repo
 ##Install Mongo & Start Service.
-# yum install -y mongodb-org 
 # systemctl enable mongod
 # systemctl start mongod
 Update Liste IP address from 127.0.0.1 to 0.0.0.0 in config file
