@@ -26,7 +26,8 @@ fi
 
 echo -n "Performing clean-up: "
 cd /usr/share/nginx/html
-rm -rf * "/tmp/${component}.log"
+rm -rf * &>> "/tmp/${COMPONENT}.log"
+
 if [ $? -eq 0 ] ; then
     echo -e "\e[32m success \e[0m"
 else
