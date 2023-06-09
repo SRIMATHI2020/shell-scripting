@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "I am frontend
+echo "I am frontend"
