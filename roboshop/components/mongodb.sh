@@ -26,19 +26,17 @@ echo -n "Installing $COMPONENT :"
 yum install mongodb-org -y &>> $LOGFILE
 stat $?
 
-echo -n "starting $COMPONENT :"
-systemctl enable mongod    &>> $LOGFILE
-systemctl start mongod     &>> $LOGFILE
-stat $?
-
 echo -n " Enabling the DB visibility"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
-echo -n "starting  $COMPONENT service: "
-systemctl enable nginx
-systemctl start nginx
+echo -n "starting $COMPONENT :"
+systemctl daemon-reload mongod   &>> $LOGFILE
+systemctl enable mongod          &>> $LOGFILE
+systemctl restart mongod           &>> $LOGFILE
 stat $?
+
+
 
 
 
