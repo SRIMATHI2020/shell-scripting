@@ -31,6 +31,10 @@ systemctl enable mongod    &>> $LOGFILE
 systemctl start mongod     &>> $LOGFILE
 stat $?
 
+echo -n " Enabling the DB visibility"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongo.conf
+stat $?
+
 
 
 
