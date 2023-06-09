@@ -3,7 +3,7 @@
 echo "The frontend is the service in RobotShop to serve the web content over Nginx "
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then
-    echo "\e[31m This script is xpectd to be run by oot user or with sudo previlage \e[0m"
+    echo "\e[31m This script is expectd to be run by root user or with sudo previlage \e[0m"
     exit 1
 fi
 
