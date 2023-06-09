@@ -1,13 +1,15 @@
 #!/bin/bash
-ID=$(id -u)
-if [ $ID -ne 0 ] ; then
-    echo "This script is xpectd to be run by oot user or with sudo previlage"
-    exit -1
-fi
 
 echo "The frontend is the service in RobotShop to serve the web content over Nginx "
+ID=$(id -u)
+if [ $ID -ne 0 ] ; then
+    echo "\e[31m This script is xpectd to be run by oot user or with sudo previlage \e[0m"
+    exit 1
+fi
+
+
 echo "Installing Nginx :"
-yum install nginx -y
+yum install nginx -y &>> "/tmp/frontend.log"
 exit 1
 
 
