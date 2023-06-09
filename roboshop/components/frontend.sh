@@ -1,6 +1,7 @@
 #!/bin/bash
 
 COMPONENT=frontend
+LOGFILE="/tmp/${COMPONENT}.log"
 
 echo "The frontend is the service in RobotShop to serve the web content over Nginx "
 ID=$(id -u)
@@ -19,7 +20,7 @@ fi
 }
 
 echo -n "Installing Nginx :"
-yum install nginx -y &>> "/tmp/${COMPONENT}.log"
+yum install nginx -y &>> $LOGFILE
 stat $?
 
 echo -n "Downloading the ${COMPONENT} component :"
@@ -28,15 +29,14 @@ stat $?
 
 echo -n "Performing clean-up: "
 cd /usr/share/nginx/html
-rm -rf * &>> "/tmp/${COMPONENT}.log"
+rm -rf * &>> $LOGFILE
 stat $?
 
+echo -n "Extracting ${COMPONENT} component :"
+unzip /tmp/frontend.zip   &>> $LOGFILE
+mv static/* .             &>> $LOGFILE
+rm -rf frontend-master README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+stat $?
 
-#unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-master README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
-Finally restart the service once to effect the changes.
-
-# systemctl restart nginx 
+##Finally restart the service once to effect the changes.
