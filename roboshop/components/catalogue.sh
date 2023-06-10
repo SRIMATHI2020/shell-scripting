@@ -35,7 +35,17 @@ if [ $? -ne 0 ] ;then
 echo -n "Creating the service Account:"
 useradd $APPUSER  &>> $LOGFILE
 stat $?
+fi
 
+echo -n "Installing $COMPONENT :"
+echo -n "Download the $COMPONENT component: "
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+stat $?
+
+echo -n "Copying the $COMPONENT to $APPUSER home directory: "
+cd /home/roboshop
+unzip -o /tmp/catalogue.zip  &>> $LOGFILE
+stat $?
 
 
 
