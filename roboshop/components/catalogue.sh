@@ -49,7 +49,7 @@ unzip -o /tmp/catalogue.zip  &>> $LOGFILE
 stat $?
 
 echo -n " Generating rpm $COMPONENT artifacts: "
-cd /home/${APPUSER}/${COMPONENT} &>> $LOGFILE
+cd /home/${APPUSER}/${COMPONENT}/ &>> $LOGFILE
 npm install &>> $LOGFILE
 stat $?
 
