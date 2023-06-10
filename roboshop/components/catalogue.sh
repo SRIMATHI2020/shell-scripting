@@ -60,7 +60,7 @@ stat $?
 
 echo -n "Update the IP address of $COMPONENT systemd file: "
 sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal.b54-roboshop.online"  /home/${APPUSER}/${COMPONENT}/systemd.service
-mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
 echo -n "Starting the ${COMPONENT} service:"
