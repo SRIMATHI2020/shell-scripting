@@ -21,19 +21,20 @@ fi
 
 echo -e *************"\e[32m $COMPONENT Installation is started \e[0m"*************
 
-echo -n "Installing Nginx :"
-yum install nodejs make gcc-c++ -y  &>> $LOGFILE
+echo -n "Configuring the $COMPONENT repo: "
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> $LOGFILE
 stat $?
 
 
+# echo -n "Installing Nginx :"
+# yum install nodejs make gcc-c++ -y  &>> $LOGFILE
+# stat $?
 
 
 
-# This service is responsible for showing the list of items that are to be sold by the RobotShop e-commerce portal.
 
-# This service is written in NodeJS, Hence need to install NodeJS in the system.
 
-# # yum install nodejs make gcc-c++ -y 
+
 # Let's now set up the catalogue application.
 
 # As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
