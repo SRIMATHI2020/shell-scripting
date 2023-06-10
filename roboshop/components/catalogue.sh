@@ -63,6 +63,11 @@ sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal.b54-roboshop.online"  /home
 mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
+echo -n "Starting the ${COMPONENT} service:"
+systemctl daemon-reload &>> $LOGFILE
+systemctl enable $COMPONENT &>> $LOGFILE
+systemctl restart $COMPONENT &>> $LOGFILE
+stat $?
 
 
 
