@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPONENT=frontend
+COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
 
