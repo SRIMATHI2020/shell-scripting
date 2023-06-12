@@ -59,7 +59,7 @@ npm install &>> $LOGFILE
 stat $?
 
 echo -n "Update the IP address of $COMPONENT systemd file: "
-sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal.b54-roboshop.online"  /home/${APPUSER}/${COMPONENT}/systemd.service
+sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal.b54-roboshop.online/"  /home/${APPUSER}/${COMPONENT}/systemd.service
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
